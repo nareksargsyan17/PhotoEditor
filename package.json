@@ -1,0 +1,14 @@
+{
+  "name": "work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "cropperjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cropperjs": "^1.5.13"
+  }
+}

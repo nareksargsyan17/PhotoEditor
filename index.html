@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="global">
+        <aside>
+            <div class="upload">
+                <img src="img/upload.png" alt="">
+                <input type="file" name="" class="hiddenUpload" style="display: none;">
+                <p>Open Image</p>
+            </div>
+            <div id="left">
+                <div>
+                    <img id="cursor" src="img/cursor.png" alt="">
+                    <span class="forHover" title="aa">Cursor</span>
+                </div>
+                <div>
+                    <img id="cut" src="img/cut.png">
+                    <span class="forHover">Cut</span>
+                </div>
+                <div>
+                    <img id="crop" src="img/crop.png" alt="">
+                    <span class="forHover">Crop</span>
+                </div>
+                <div>
+                    <img id="rotate" src="img/rotate.png" alt="">
+                    <span class="forHover">Rotate & Flip</span>
+                </div>
+                <div>
+                    <img id="filter" src="img/filter.png" alt="">
+                    <span class="forHover">Filter</span>
+                </div>
+                <div>
+                    <img id="draw" src="img/draw.png" alt="">
+                    <span class="forHover">Draw</span>
+                </div>
+            </div>
+            <div id="right">
+                <div class="crop">
+                    <p>Crop</p>
+                    Width
+                    <input type="number" id="width">
+                    Height
+                    <input type="number" id="height">
+                    <label>
+                        <input type="checkbox" checked id="check">
+                        Maintain aspect ratio
+                    </label>
+                </div>
+                <div class="rotate">
+                    <p>Straighten </p>
+                    <input type="range" id="range" min="-180" max="180" value="0" name="0">
+                    <span>0°</span>
+                    <p>Rotate & flip</p>
+                    <ul>
+                        <li><img src="img/rLeft.png" alt=""></li>
+                        <li><img src="img/rRight.png" alt=""></li>
+                        <li><img src="img/horizon.png" alt=""></li>
+                        <li><img src="img/vertical.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="filter">
+                    <p>Contrast </p>
+                    <input type="range" id="contrast" min="0" max="1000" value="100" name="100">
+                    <span>100%</span>
+                    <p>Brightness </p>
+                    <input type="range" id="brightness" min="0" max="500" value="100" name="100">
+                    <span>100%</span>
+                    <p>Blur </p>
+                    <input type="range" id="blur" min="0" max="10" value="0" name="0">
+                    <span>0%</span>
+                    <p>Invert </p>
+                    <input type="range" id="invert" min="0" max="100" value="0" name="0">
+                    <span>0%</span>
+                    <p>Gray </p>
+                    <input type="range" id="gray" min="0" max="100" value="0" name="0">
+                    <span>0%</span>
+                    <p>Sepia </p>
+                    <input type="range" id="sepia" min="0" max="100" value="0" name="0">
+                    <span>0%</span>
+                    <p>Opacity </p>
+                    <input type="range" id="opacity" min="0" max="100" value="100" name="100">
+                    <span>100%</span>
+                    <button id="resetFil">Reset Filters</button>
+                </div>
+                <div class="draw">
+                    <div class="color">
+                        <span>Color</span>
+                        <input id="forColor" type="color" value="#0E7DAF">
+                    </div>
+                    <div class="forSize">
+                        <span>Size</span>
+                        <input type="number" id="size" value="2">
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div>
+            <div id="parent">
+                <img src="" alt="" id="change" type="image/jpg">
+                <img src="" alt="" id="img">
+                <img src="" alt="" id="forRes">
+            </div>
+            <div id="controller">
+                <div>
+                    <button id="reset">Reset</button>
+                    <button id="save">Save</button>
+                </div>
+                <div>
+                    <button id="remove">Remove Image</button>
+                    <button id="download">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
